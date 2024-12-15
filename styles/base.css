@@ -3,6 +3,7 @@ body {
     color: #333;
     background-color: #E0E0E0;
     font-size: 80.5%;
+    margin: 0;
 }
 
 header {
@@ -36,33 +37,95 @@ main {
     margin-inline: auto;
 }
 
+.searchbar {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    gap: 4px;
+    input{
+        flex-grow: 1;
+        padding-left: 8px;
+        border-radius: 16px;
+        border: 1px solid #ccc;
+        outline-color: #4CAF50;
+    }
+    .searchbar-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 16px;
+        padding: 8px;
+        svg{
+            color: white;
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+.trending {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    button {
+        background-color: #4CAF50;
+        border-radius: 8px;
+        margin: 8px;
+        padding: 5px;
+        padding-inline: 12px;
+        font-size: 12px;
+        color: white;
+        border: none;
+    }
+}
+
 footer {
     background-color: #4CAF50;
     display: flex;
+    flex-direction: column;
     padding: 5px;
     margin: 0 auto;
-	max-width: 1050px;
     text-align: center;
     align-items: center;
     justify-content: space-between;
+    gap: 8px;
 }
 
 footer img {
-    width: 50px;
-    height: 50px;
+    height: 100%;
+    aspect-ratio: 1/1;
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
 }
 
 footer div:has(svg) {
+    display: flex;
+    gap: 8px;
     margin: 2px;
     padding: 2px;;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
+}
+
+footer div:has(p){
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 footer p {
+    align-self: flex-start;
     font-size: 10px;
     margin: 2px;
     padding: 2px;
+}
+
+footer div:has(img){
+    height: 40px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 }
