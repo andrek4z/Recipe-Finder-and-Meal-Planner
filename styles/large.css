@@ -1,3 +1,9 @@
 @media  screen and (width > 640px) {
-    
+    .calendar {
+        padding: 16px;
+        margin: 16px;
+        iframe{
+            height: 100px;
+        }
+    }
 }
