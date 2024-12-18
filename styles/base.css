@@ -251,19 +251,6 @@ footer div:has(img){
     border-radius: 5px;
 }
 
-.filter-dropdown {
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    z-index: 1000;
-    width: 200px;
-}
-
 .filter-dropdown label {
     display: flex;
     align-items: center;
@@ -278,6 +265,14 @@ footer div:has(img){
     display: none;
 }
 
-.recipes-container {
-    margin-top: 20px;
+.filter-dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.filter-dropdown.show {
+    display: block;
 }
