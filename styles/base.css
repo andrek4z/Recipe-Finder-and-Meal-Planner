@@ -192,13 +192,13 @@ footer img {
     filter: drop-shadow(0 0 24px rgba(0, 0, 0, 0.5));
 }
 
-footer div:has(svg) {
+footer div:has(.footer-icon) {
     display: flex;
     gap: 8px;
     margin: 2px;
-    padding: 2px;;
-    width: 60px;
-    height: 60px;
+    padding: 2px;
+    height: 48px;
+    align-items:center;
 }
 
 footer div:has(p){
@@ -220,4 +220,9 @@ footer div:has(img){
     width: 100%;
     justify-content: space-between;
     align-items: center;
+}
+
+.footer-icon {
+    height: 32px;
+    aspect-ratio: 1/1;
 }
