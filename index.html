@@ -15,8 +15,9 @@
     </header>
     <main>
         <div class="searchbar">
-            <input type="text" placeholder="search recipe">
+            <input aria-label="search recipe input" type="text" placeholder="search recipe">
             <button class="searchbar-button">
+                Search
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-zoom">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" />
                 </svg>
@@ -31,7 +32,7 @@
         </div>
         <h2>Meal Planner</h2>
         <div class="calendar">
-            <iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23B39DDB&ctz=America%2FLos_Angeles&showTitle=0&showNav=0&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&hl=en&src=NjI1ZTlmMDQzMjk4MjlmY2JjNGFmN2EyYmE4M2IyZWNkMjk3NmU1MjhmNjk0NjFkZDM0MzhhNjBkODhiYmFhMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D50000" style="border:solid 1px #777" width="" height="" loading="lazy" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23B39DDB&ctz=America%2FLos_Angeles&showTitle=0&showNav=0&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&hl=en&src=NjI1ZTlmMDQzMjk4MjlmY2JjNGFmN2EyYmE4M2IyZWNkMjk3NmU1MjhmNjk0NjFkZDM0MzhhNjBkODhiYmFhMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D50000" style="border:solid 1px #777" width="" height="" loading="lazy"></iframe>
         </div>
     </main>
     <footer>
@@ -43,7 +44,7 @@
                 </svg>
 
                 <svg viewBox="0 0 128 128">
-                    <path fill="#ffff" d="M75.916 54.2 122.542 0h-11.05L71.008 47.06 38.672 0H1.376l48.898 71.164L1.376 128h11.05L55.18 78.303 89.328 128h37.296L75.913 54.2ZM60.782 71.79l-4.955-7.086-39.42-56.386h16.972L65.19 53.824l4.954 7.086 41.353 59.15h-16.97L60.782 71.793Z" fill="#000" style="stroke-width:.104373"></path>
+                    <path d="M75.916 54.2 122.542 0h-11.05L71.008 47.06 38.672 0H1.376l48.898 71.164L1.376 128h11.05L55.18 78.303 89.328 128h37.296L75.913 54.2ZM60.782 71.79l-4.955-7.086-39.42-56.386h16.972L65.19 53.824l4.954 7.086 41.353 59.15h-16.97L60.782 71.793Z" fill="#000" style="stroke-width:.104373"></path>
                 </svg>
             </div>
         </div>
@@ -53,6 +54,6 @@
             <p>Privacy Policy</p>
         </div>
     </footer>
-    <script src="scripts/recipe.js"></script>
+    <script src="scripts/recipe.js" type="module"></script>
 </body>
 </html>
