@@ -23,7 +23,13 @@ async function loadMoreRecipes() {
     loading = true;
     loader.style.display = "block";
 
-    const recipes = await api.getRecipes(page);
+    const searchTerm = window.sessionStorage.getItem('search-term')
+    if (searchTerm === null) {
+        loader.innerText = "No search term found."
+        return
+    }
+
+    const recipes = await api.getRecipes(searchTerm, page)
     if (recipes.length > 0) {
         displayRecipes(recipes);
         page++;

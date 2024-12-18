@@ -1,11 +1,19 @@
 const API_KEY = "20d3c57972d94b619800de090d1fe9bb"
 const BASE_URL = "https://api.spoonacular.com"
 
+const options = {
+  headers: {
+    'Content-Type': 'application/json',
+    'x-api-key': API_KEY
+  }
+}
+
 export const api = {
-    getRecipes: async (page = 1) => {
+    getRecipes: async (searchTerm, page = 1) => {
       try {
         const response = await fetch(
-          `${BASE_URL}/recipes/complexSearch?apiKey=${API_KEY}&number=12&offset=${(page - 1) * 12}`
+          `${BASE_URL}/recipes/complexSearch?number=12&offset=${(page - 1) * 12}&query=${searchTerm}`,
+          options
         )
         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`)
         const data = await response.json()
@@ -19,7 +27,8 @@ export const api = {
     getTrendingRecipes: async () => {
       try {
         const response = await fetch(
-          `${BASE_URL}/recipes/random?apiKey=${API_KEY}&number=6`
+          `${BASE_URL}/recipes/random?number=6`,
+          options
         )
 
         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`)

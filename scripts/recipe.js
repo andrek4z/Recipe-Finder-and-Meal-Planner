@@ -1,6 +1,7 @@
 import { api } from './api.js'
 
 const $trendingContainer = document.querySelector(".trending-recipes")
+const $searchForm = document.getElementById('search-form')
 
 async function displayTrendingRecipes() {
     const trendingRecipes = await api.getTrendingRecipes()
@@ -23,4 +24,14 @@ async function displayTrendingRecipes() {
     })
 }
 
-displayTrendingRecipes()
+$searchForm.onsubmit = (event) => {
+    event.preventDefault()
+    const searchTerm = document.getElementById('search-recipe').value
+    window.sessionStorage.setItem('search-term', searchTerm)
+    window.location.href = '/recipes.html'
+}
+
+window.addEventListener('load', async () => {
+    window.sessionStorage.removeItem('search-term')
+    await displayTrendingRecipes()
+})
