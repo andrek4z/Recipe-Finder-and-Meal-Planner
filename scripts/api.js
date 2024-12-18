@@ -10,9 +10,11 @@ const options = {
 
 export const api = {
     getRecipes: async (searchTerm, page = 1) => {
+      const query = (searchTerm !== undefined) ? `&query=${searchTerm}` : ''
+
       try {
         const response = await fetch(
-          `${BASE_URL}/recipes/complexSearch?number=12&offset=${(page - 1) * 12}&query=${searchTerm}`,
+          `${BASE_URL}/recipes/complexSearch?number=12&offset=${(page - 1) * 12}${query}`,
           options
         )
         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`)
