@@ -22,7 +22,7 @@ export const api = {
         return data.results;
       }
       catch (error) {
-        console.error("Error al obtener recetas:", error.message);
+        console.error("Error getting recipes:", error.message);
         return [];
       }
     },
