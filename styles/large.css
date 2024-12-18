@@ -3,7 +3,12 @@
         padding: 16px;
         margin: 16px;
         iframe{
-            height: 100px;
+            display: block;
+            width: 100%;
+            max-width: 768px;
+            margin-inline: auto;
+            height: auto;
+            aspect-ratio: 1/1;
         }
     }
 }
