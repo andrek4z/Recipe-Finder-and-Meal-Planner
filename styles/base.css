@@ -271,8 +271,17 @@ footer div:has(img){
     border: 1px solid #ddd;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    left: -40px;
+    top: 41px
 }
 
 .filter-dropdown.show {
     display: block;
+    justify-content: left;
+    align-items: left;
+}
+
+.filter-dropdown label:hover {
+    background-color: #009a6e80;
 }

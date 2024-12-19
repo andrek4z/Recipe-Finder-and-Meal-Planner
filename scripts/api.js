@@ -9,23 +9,26 @@ const options = {
 }
 
 export const api = {
-    getRecipes: async (searchTerm, page = 1) => {
-      const query = (searchTerm !== undefined) ? `&query=${searchTerm}` : ''
+  getRecipes: async (searchTerm, page = 1, filters = []) => {
+    const query = (searchTerm !== undefined) ? `&query=${searchTerm}` : '';
 
-      try {
-        const response = await fetch(
-          `${BASE_URL}/recipes/complexSearch?number=12&offset=${(page - 1) * 12}${query}`,
-          options
-        )
-        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`)
-        const data = await response.json()
-        return data.results;
-      }
-      catch (error) {
-        console.error("Error getting recipes:", error.message);
-        return [];
-      }
-    },
+    // Construye los filtros en la URL
+    const filterQuery = filters.map(filter => `&${filter}=true`).join('');
+
+    try {
+      const response = await fetch(
+        `${BASE_URL}/recipes/complexSearch?number=12&offset=${(page - 1) * 12}${query}${filterQuery}`,
+        options
+      );
+      if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+      const data = await response.json();
+      return data.results;
+    }
+    catch (error) {
+      console.error("Error getting recipes:", error.message);
+      return [];
+    }
+  },
     getTrendingRecipes: async () => {
       try {
         const response = await fetch(
