@@ -1,16 +1,13 @@
-// Código para manejar el filtro
 const filterButton = document.getElementById('filterButton');
 const filterDropdown = document.getElementById('filterDropdown');
 const filterOptions = document.querySelectorAll('.filter-option');
 
 let selectedFilters = [];
 
-// Mostrar/ocultar el menú de filtros
 filterButton.addEventListener('click', () => {
     filterDropdown.classList.toggle('show');
 });
 
-// Actualizar los filtros seleccionados
 filterOptions.forEach(option => {
     option.addEventListener('change', () => {
         const value = option.value;
@@ -24,7 +21,6 @@ filterOptions.forEach(option => {
 });
 
 function resetAndLoadRecipes() {
-    // Reinicia la lista de recetas y el contador de página
     container.innerHTML = '';
     page = 1;
     loadMoreRecipes();
@@ -37,7 +33,6 @@ async function loadMoreRecipes() {
 
     const searchTerm = window.sessionStorage.getItem('search-term') ?? undefined;
 
-    // Incluir filtros en la solicitud
     const recipes = await api.getRecipes(searchTerm, page, selectedFilters);
     if (recipes.length > 0) {
         displayRecipes(recipes);
